@@ -1,0 +1,58 @@
+.form {
+  @apply
+  w-full
+
+  flex
+  flex-col
+
+  mt-6
+}
+
+.label {
+  @apply
+  font-semibold
+  leading-tight
+}
+
+.label ~ label {
+  @apply
+  pt-4
+}
+
+.input {
+  outline: none !important;
+  @apply
+  p-4
+  rounded-lg
+  mt-3
+  bg-zinc-800
+  text-white
+  placeholder:text-zinc-400
+    
+  
+  focus:bg-violet-900/75
+}
+
+.button {
+  @apply
+  mt-6
+  rounded-lg
+  p-4
+
+  flex
+  gap-4
+  items-center
+  justify-center
+   
+  font-semibold
+  !bg-violet-700/80
+  hover:!bg-violet-700
+
+  focus:outline-none
+  focus:ring-2
+  focus:ring-violet-700
+  shadow-md
+  focus:shadow-violet-400
+  
+  transition-colors
+}

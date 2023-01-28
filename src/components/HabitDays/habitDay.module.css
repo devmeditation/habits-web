@@ -1,0 +1,46 @@
+.habitDaysSquare {
+  @apply
+  w-10
+  h-10
+
+  !bg-zinc-900
+  border-2
+  border-zinc-800
+  rounded-lg
+  transition-colors
+  duration-300
+
+  focus:outline-none
+  focus:ring-2
+  focus:ring-violet-300
+}
+
+.content {
+  @apply
+  min-w-[320px]
+  p-6
+  rounded-2xl
+  bg-zinc-900
+
+  flex
+  flex-col
+}
+
+.arrow {
+  @apply
+  fill-zinc-900
+}
+
+.day {
+  @apply
+  font-semibold
+  text-zinc-400
+}
+
+.date {
+  @apply
+  m-1
+  font-extrabold
+  leading-tight
+  text-3xl
+}

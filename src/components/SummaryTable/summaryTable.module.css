@@ -1,0 +1,35 @@
+.summaryTable {
+  @apply
+  w-full
+  flex
+}
+
+.summaryTableSide {
+  @apply
+  grid
+  grid-rows-7
+  grid-flow-row
+  gap-3
+}
+.summaryTableHeader {
+  @apply
+  w-10
+  h-10
+
+  font-bold
+  text-zinc-400
+  text-xl
+
+  flex
+  items-center
+  justify-center
+}
+
+.summaryTableContainer {
+  @apply
+  grid
+  grid-rows-7
+  grid-flow-col
+  gap-3
+}
+
