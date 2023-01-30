@@ -44,3 +44,22 @@
   leading-tight
   text-3xl
 }
+
+.previousDate {
+  @apply
+  mt-4 
+  flex 
+  justify-center 
+  bg-violet-900/75 
+  border-t-4 
+  border-green-500
+}
+
+.previousDateText {
+  @apply
+  w-2/3 
+  p-2 
+  text-2xl 
+  text-center 
+  animate-pulse
+}

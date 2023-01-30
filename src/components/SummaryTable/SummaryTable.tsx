@@ -40,16 +40,17 @@ export function SummaryTable() {
 
       <div className={styles.summaryTableContainer}>
         {(summary.length > 0) && summaryDates.map((date) => {
-          const dayInSummary = summary.find((day) => {
+          const dayInSummary = summary.find((day) => {            
             return dayjs(date).isSame(day.date, "day");
           });
-
+          
           return (
             <HabitDay
               key={date.toISOString()}
               date={date}
               amount={dayInSummary?.amount}
               defaultCompleted={dayInSummary?.completed}
+              focus={dayjs(Date.now()).isSame(date, 'day')}
             />
           );
         })}

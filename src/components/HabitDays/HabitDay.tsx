@@ -9,27 +9,33 @@ import { HabitsList } from "../HabitsList/HabitsList";
 import { useState } from "react";
 
 interface HabitDauProps {
-  date: Date
-  defaultCompleted?: number
-  amount?: number
+  date: Date;
+  defaultCompleted?: number;
+  amount?: number;
+  focus?: boolean;
 }
 
-export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDauProps) {
-  const[completed, setCompleted] = useState(defaultCompleted)
-  const completedPercentage = (amount > 0) ? Math.round((completed / amount) * 100) : 0
+export function HabitDay({
+  defaultCompleted = 0,
+  amount = 0,
+  date,
+  focus,
+}: HabitDauProps) {
+  const [completed, setCompleted] = useState(defaultCompleted);
+  const completedPercentage =
+    amount > 0 ? Math.round((completed / amount) * 100) : 0;
 
-  const dayAndMonth = dayjs(date).format('DD/MM')
-  const dayOfWeek = dayjs(date).format('dddd')
+  const dayAndMonth = dayjs(date).format("DD/MM");
+  const dayOfWeek = dayjs(date).format("dddd");
 
   function handleCompletedChanged(completed: number) {
     setCompleted(completed);
-    console.log(completed);
-    
   }
 
   return (
     <Popover.Root>
       <Popover.Trigger
+        autoFocus={focus ?? false}
         className={clsx(`${styles.habitDaysSquare} `, {
           " !bg-violet-900 border-violet-800":
             completedPercentage > 0 && completedPercentage < 20,
@@ -50,10 +56,15 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDauPro
 
           <ProgressBar progress={completedPercentage} />
 
-          <HabitsList
-            date={date}
-            onCompletedChanged={handleCompletedChanged}
-          />
+          <HabitsList date={date} onCompletedChanged={handleCompletedChanged} />
+
+          <div className={styles.previousDate}>
+            {!dayjs(Date.now()).isSame(date, "day") && (
+              <h2 className={styles.previousDateText}>
+                Você não pode editar uma data que já passou
+              </h2>
+            )}
+          </div>
 
           <Popover.Arrow width={16} height={8} className={styles.arrow} />
         </Popover.Content>
