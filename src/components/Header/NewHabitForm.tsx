@@ -20,10 +20,6 @@ export function NewHabitForm() {
   const [title, setTitle] = useState('')
   const [weekDays, SetWeekDays] = useState<number[]>([])
 
-  // function handleTitleChange(event: React.ChangeEvent<HTMLInputElement>) {
-  //   setTitle(event.target.value)
-  // }
-
   function habdleToggleWeekDay(weekDay: number){
     if( weekDays.includes(weekDay)) {
       const weekDayWithRemovedOne = weekDays.filter(day => day !== weekDay)

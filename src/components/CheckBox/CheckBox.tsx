@@ -1,7 +1,5 @@
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { Check } from "phosphor-react";
-import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
 
 import styles from "./checkbox.module.css";
 
@@ -29,26 +27,12 @@ interface HabitsInfo {
 }
 
 export function CheckBox({
-  date,
   _checkboxStyle,
   _text,
   _textStyle,
   checked,
   onCheckedChange,
 }: CheckBoxProps) {
-  // const [habitsInfo, setHabitsInfo] = useState<HabitsInfo>()
-
-  // if (date) {
-  //   useEffect(() => {
-  //     api.get("day", {
-  //       params: {
-  //         date: date.toISOString(),
-  //       },
-  //     }).then(response =>{
-  //       setHabitsInfo(response.data)
-  //     })
-  //   }, []);
-  // }
 
   return (
     <Checkbox.Root
