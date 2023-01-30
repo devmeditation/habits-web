@@ -25,6 +25,10 @@ Esse app necessida de integração com a [habit-api](https://github.com/devmedit
 - [Zod Dev](https://zod.dev/)
 - [CLSX](https://www.npmjs.com/package/clsx)
 - [Git](https://git-scm.com/)
+- [TaiwindCSS](https://tailwindcss.com/)
+- [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [PushManager API](https://developer.mozilla.org/pt-BR/docs/Web/API/PushManager)
+
 
 
 ## CONTATO
